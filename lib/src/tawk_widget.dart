@@ -99,7 +99,7 @@ class _TawkState extends State<Tawk> {
           gestureRecognizers: {}..add(Factory<VerticalDragGestureRecognizer>(
               () => VerticalDragGestureRecognizer())),
           initialUrlRequest:
-              URLRequest(url: Uri.tryParse(widget.directChatLink)),
+              URLRequest(url: WebUri.uri(Uri.tryParse(widget.directChatLink)!)),
           onWebViewCreated: (webViewController) {
             setState(() {
               _controller = webViewController;
